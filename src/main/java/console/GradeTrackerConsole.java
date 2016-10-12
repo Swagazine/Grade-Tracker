@@ -1,6 +1,7 @@
 package console;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class GradeTrackerConsole {
@@ -15,7 +16,7 @@ public class GradeTrackerConsole {
 
         System.out.println("** -- Grade Tracker Console -- **");
 
-        //while (true) {
+        while (true) {
             try {
                 System.out.println("Enter in assignment weighting (numeric): ");
                 input = br.readLine();
@@ -31,14 +32,14 @@ public class GradeTrackerConsole {
 
                 calculateValues(weighting, mark, total);
 
-                //break;
+                break;
 
-            }   catch (Exception e) {
-                e.printStackTrace();
+            }   catch (NumberFormatException e) {
+                System.out.println("Input error, use numbers only");
+            }   catch (IOException e) {
+                System.out.println("IO error, please try again");
             }
-        //}
-
-
+        }
     }
 
     private static void calculateValues(int weight, double mark, int total) {
