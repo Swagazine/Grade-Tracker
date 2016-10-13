@@ -3,6 +3,7 @@ package console;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 
 public class GradeTrackerConsole {
     public static void main(String[] args) {
@@ -54,7 +55,8 @@ public class GradeTrackerConsole {
     }
 
     private static void calculateValues(int weight, double mark, int total) {
-        System.out.println("Total percentage of assignment: " + (mark/total * 100) + "/100");
-        System.out.println("Total percentage in unit (weighted): " + (mark/total * weight) + "/100");
+        DecimalFormat df = new DecimalFormat(".##");
+        System.out.println("Total percentage of assignment: " + df.format((mark/total * 100)) + "/100");
+        System.out.println("Total percentage in unit (weighted): " + df.format((mark/total * weight)) + "/100");
     }
 }
