@@ -9,7 +9,7 @@ public class GradeTrackerConsole {
     public static void main(String[] args) {
 
         String input;
-        int weighting;
+        int weight;
         double mark;
         int total;
 
@@ -21,7 +21,7 @@ public class GradeTrackerConsole {
             try {
                 System.out.println("Enter in assignment weighting (numeric): ");
                 input = br.readLine();
-                weighting = Integer.parseInt(input);
+                weight = Integer.parseInt(input);
 
                 System.out.println("Enter in mark: ");
                 input = br.readLine();
@@ -31,7 +31,7 @@ public class GradeTrackerConsole {
                 input = br.readLine();
                 total = Integer.parseInt(input);
 
-                GradeFunctions.calculateValues(weighting, mark, total);
+                GradeFunctions.calculateValues(mark, total, weight);
 
                 while (true) {
                     System.out.println("Do you want to submit another entry? Y/N: ");
