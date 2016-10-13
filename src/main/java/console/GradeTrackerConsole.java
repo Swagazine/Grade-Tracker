@@ -32,12 +32,23 @@ public class GradeTrackerConsole {
 
                 calculateValues(weighting, mark, total);
 
-                break;
+                while (true) {
+                    System.out.println("Do you want to submit another entry? Y/N: ");
+                    input = br.readLine();
+                    if (input.equals("Y") || input.equals("y")) {
+                        break;
+                    }   else if (input.equals("N") || input.equals("n")) {
+                        System.out.println("Thank you for using the Grade Tracker Console");
+                        System.exit(0);
+                    }   else {
+                        System.out.println("Invalid response, try again");
+                    }
+                }
 
             }   catch (NumberFormatException e) {
                 System.out.println("Input error, use numbers only");
             }   catch (IOException e) {
-                System.out.println("IO error, please try again");
+                System.out.println("I/O error, please try again");
             }
         }
     }
