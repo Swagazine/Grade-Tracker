@@ -3,7 +3,7 @@ package console;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.DecimalFormat;
+import math.*;
 
 public class GradeTrackerConsole {
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class GradeTrackerConsole {
                 input = br.readLine();
                 total = Integer.parseInt(input);
 
-                calculateValues(weighting, mark, total);
+                GradeFunctions.calculateValues(weighting, mark, total);
 
                 while (true) {
                     System.out.println("Do you want to submit another entry? Y/N: ");
@@ -52,11 +52,5 @@ public class GradeTrackerConsole {
                 System.out.println("I/O error, please try again");
             }
         }
-    }
-
-    private static void calculateValues(int weight, double mark, int total) {
-        DecimalFormat df = new DecimalFormat(".##");
-        System.out.println("Total percentage of assignment: " + df.format((mark/total * 100)) + "/100");
-        System.out.println("Total percentage in unit (weighted): " + df.format((mark/total * weight)) + "/100");
     }
 }
