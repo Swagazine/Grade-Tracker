@@ -22,6 +22,6 @@ dependencies {
 
 task gtConsole(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
-    main = "console.GradeTrackerConsole"
+    main = "console.Main"
     standardInput = System.in
 }
