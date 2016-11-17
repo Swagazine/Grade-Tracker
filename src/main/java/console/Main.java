@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 import math.*;
 
-public class GradeTrackerConsole {
+public class Main {
     public static void main(String[] args) {
 
         ConsoleFunctions functions = new ConsoleFunctions();
