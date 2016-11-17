@@ -9,6 +9,8 @@ import math.*;
 public class GradeTrackerConsole {
     public static void main(String[] args) {
 
+        ConsoleFunctions functions = new ConsoleFunctions();
+
         String input = null;
         int weight;
         double mark;
@@ -19,10 +21,10 @@ public class GradeTrackerConsole {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("** -- Grade Tracker Console -- **");
+        System.out.println("Type 'quit' to exit at any time");
 
         while (true) {
             try {
-                System.out.println("Type 'quit' to exit at any time");
                 System.out.println("Enter in assignment weighting (numeric): ");
                 input = br.readLine();
                 weight = Integer.parseInt(input);
@@ -42,11 +44,11 @@ public class GradeTrackerConsole {
                 System.out.println("Total marks overall in unit: " + unitTotal + "/100");
 
                 while (true) {
-                    System.out.println("Do you want to submit another entry? Y/N: ");
+                    System.out.println("Do you want to submit another entry? y/n: ");
                     input = br.readLine();
-                    if (input.equals("Y") || input.equals("y")) {
+                    if (functions.isYes(input)) {
                         break;
-                    }   else if (input.equals("N") || input.equals("n")) {
+                    }   else if (functions.isNo(input) || functions.isQuit(input)) {
                         System.out.println("Thank you for using the Grade Tracker Console");
                         System.exit(0);
                     }   else {
@@ -56,7 +58,7 @@ public class GradeTrackerConsole {
 
             }   catch (NumberFormatException e) {
 
-                if (input.equals("quit") || input.equals("Quit")) {
+                if (functions.isQuit(input)) {
                     System.out.println("Exiting console...");
                     System.exit(0);
                 }
