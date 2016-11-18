@@ -3,7 +3,7 @@ A small application where you can put in grades from assignments (with weighting
 
 ## Project Structure
 * Gradle folder: Contains the wrapper
-    * src folder: Contains the code for the project
+* src folder: Contains the code for the project
     * Console: Contains the console application
     * Math: Contains functions that will be used in all Grade Tracker variants
     * testfolder: Just a folder for testing, no actual value to project
