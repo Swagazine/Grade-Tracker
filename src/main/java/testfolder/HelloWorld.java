@@ -7,7 +7,7 @@ public class HelloWorld {
 
         LocalTime currentTime = new LocalTime();
         System.out.println("The current local time is: " + currentTime);
-        //comment
+        System.out.println("give me an error");
         //sand nigger love
         System.out.println("Hello world!");
         System.out.println("Jono is love0");
