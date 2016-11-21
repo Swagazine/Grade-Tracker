@@ -9,5 +9,7 @@ public class HelloWorld {
         System.out.println("The current local time is: " + currentTime);
 
         System.out.println("Hello world!");
+        System.out.println("Jono is love0");
+
     }
 }
